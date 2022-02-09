@@ -1,0 +1,100 @@
+//default modifier
+
+package proj1;
+
+public class accessModifier {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//default accessModifier
+		defaultSpecifier ds=new defaultSpecifier();
+		ds.myMethod();
+
+	}
+
+}
+class defaultSpecifier{
+	void myMethod() {
+		System.out.println("goodMorning everyOne");
+		
+	}
+}
+
+
+
+//private modifier
+package proj1;
+
+public class accessModifier2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//private accessSpecifier
+		privateSpecifier ps=new privateSpecifier();
+		//ps.myMethod();
+		//private access modifier cannot access from different class
+		//they only can access from the same class
+
+	}
+
+}
+class privateSpecifier{
+	private void myMethod() {
+		System.out.println("good afterNoon everyone");
+	}
+}
+
+
+
+
+
+
+//protected modifier
+package package1;
+
+public class accessSpecifier {
+	protected void printMethod() {
+		System.out.println(" protected Specifier");
+	}
+//created another package
+
+package package2;
+import package1.*;
+public class protectedSpecifier2 extends accessSpecifier{
+	
+	public static void main(String[]args) {
+		protectedSpecifier2 sp1=new protectedSpecifier2();
+		sp1.printMethod();
+		//we can accesss protected specifier
+		//from different package using extends keyword
+}
+
+
+
+//public specifier
+package package3;
+
+public class publicSpecifier {
+	public void displayMethod() {
+		System.out.println("Welcome to java programming");
+
+	}
+
+}
+//created another package
+package package4;
+import package3.*;
+
+public class publicSpecifier2 {
+
+	public static void main(String[] args) {
+		publicSpecifier pubspecifier=new publicSpecifier();
+		pubspecifier.displayMethod();
+		// TODO Auto-generated method stub
+		//In public access specifier
+		//we can access from different package also.
+	
+
+	}
+
+}

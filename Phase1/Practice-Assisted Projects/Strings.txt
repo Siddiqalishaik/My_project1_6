@@ -1,0 +1,92 @@
+package proj1;
+
+public class stringTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//Strings
+		String greet=new String("Good Morning");
+		System.out.println(greet.length());
+		System.out.println("\n");
+		
+		//substring
+		String ss=new String("GoodAfternoon");
+		System.out.println(ss.substring(1));
+		System.out.println("\n");
+		
+		//String comparison
+		String s1="GoodEvening";
+		String s2="goudEvening";
+		System.out.println(s1.compareTo(s2));
+		System.out.println("\n");
+		
+		//IsEmpty
+		String s3="";
+		System.out.println(s3.isEmpty());
+		System.out.println("\n");
+		
+		//toLower case
+		String s4="WELCOME TO JAVA PROGRAMMING";
+		System.out.println(s4.toLowerCase());
+		System.out.println("\n");
+		
+		//replace
+		String s5="goudEvening";
+		String replace=s2.replace('u','o');
+		System.out.println(replace);
+		System.out.println("\n");
+		
+		//equals
+		String m1="Hello World";
+		String m2="hElLo wORld";
+		System.out.println(m1.equals(m2));
+		System.out.println("\n");
+		
+		//creating StringBuffer and append method
+		StringBuffer msg=new StringBuffer("Java programming ");
+		msg.append("is easy to learn");
+		System.out.println(msg);
+		System.out.println("\n");
+		//insert
+		msg.insert(5,'P');
+		System.out.println(msg);
+		System.out.println("\n");
+		
+		//replace
+		StringBuffer sb=new StringBuffer("progProgramming");
+		sb.replace(0, 4, "java");
+		System.out.println(sb);
+		System.out.println("\n");
+		
+		//delete method
+		sb.delete(0, 1);
+		System.out.println(sb);
+		System.out.println("\n");
+		
+		//String Builder
+		System.out.println("String Builder");
+		StringBuilder msg1=new StringBuilder("Happy");
+		msg1.append("Learning");
+		System.out.println(msg1);
+		System.out.println(msg1.delete(0,2));
+		System.out.println(msg1.insert(1,"welcome"));
+		System.out.println(msg1.reverse());
+		
+		//conversion
+		System.out.println("converswion from string to stringBuffer");
+		String msg2="Welcome students";
+		StringBuffer msg3=new StringBuffer(msg2);
+		msg3.reverse();
+		System.out.println(msg3);
+		System.out.println("\n");
+		
+		System.out.println("String to String Builder");
+		StringBuilder msg4=new StringBuilder(msg2);
+		msg4.append("good morning");
+		System.out.println(msg4);
+	
+
+		
+	}
+
+}

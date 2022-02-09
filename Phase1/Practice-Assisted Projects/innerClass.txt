@@ -1,0 +1,73 @@
+package proj1;
+
+public class outerClass {
+	private String name="peter";
+	class innerClass{
+		void show() {
+			System.out.println(name+" "+"Welcome to java training session");
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		outerClass oc=new outerClass();
+		outerClass.innerClass ic=oc.new innerClass();
+		ic.show();
+		
+
+	}
+
+}
+
+package proj1;
+
+public class icTest {
+	private String message="hello peter";
+	
+	void show1() {
+		class msgTest{
+			void message() {
+				System.out.println(message);
+			}
+		}
+		msgTest mt=new msgTest();
+		mt.message();
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		icTest icT=new icTest();
+		icT.show1();
+
+	}
+
+}
+
+//Anonymous class
+package proj1;
+
+public class innerClassTest3 {
+
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//anonymous class
+		aClass ac1=new aClass(){
+			public void show() {
+				System.out.println("anonymous class");
+				
+			}
+			
+		};
+		ac1.show();
+		
+		
+
+	}
+
+}
+abstract class aClass{
+	public abstract void show();
+	
+}

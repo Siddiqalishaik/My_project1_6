@@ -1,0 +1,63 @@
+//Collections
+
+package proj1;
+import java.util.*;
+
+public class collectionsTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//creating an array list
+		System.out.println("ArrayList");
+		ArrayList<String> cars=new ArrayList<String>();
+		cars.add("BMW");
+		cars.add("Volvo");
+		cars.add("Ford");
+		cars.add("Benz");
+		System.out.println(cars);
+		
+		//Creating a Vector
+		System.out.println("\n");
+		System.out.println("Vector");
+		Vector<Integer> states=new Vector<Integer>();
+		states.addElement(2);
+		states.addElement(4);
+		states.addElement(6);
+		System.out.println(states);
+		
+		// creating linkedList
+		System.out.println("\n");
+		System.out.println("linkedList");
+		LinkedList<String>st1=new LinkedList<String>();
+		st1.add("rahul");
+		st1.add("raj");
+		st1.add("daisy");
+		st1.add("Ron");
+		System.out.println(st1);
+		
+		// creating a hashSet
+		System.out.println("\n");
+		System.out.println("HashSet");
+		HashSet<Integer> idNumber=new HashSet<Integer>();
+		idNumber.add(4142);
+		idNumber.add(2132);
+		idNumber.add(3214);
+		idNumber.add(7142);
+		System.out.println(idNumber);
+		
+		//creating a LinkedHash Set
+		System.out.println("\n");
+		System.out.println("LinkedHashSet");
+		LinkedHashSet<Integer>empid=new LinkedHashSet<Integer>();
+		empid.add(211);
+		empid.add(431);
+		empid.add(909);
+		empid.add(1001);
+		System.out.println(empid);
+		
+
+		
+		
+	}
+
+}

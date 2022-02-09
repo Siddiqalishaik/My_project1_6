@@ -1,0 +1,57 @@
+//default_Constructor
+
+public class constructorTest {
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//default constructor
+		st student1=new st();
+		st student2=new st();
+		student1.cMethod();
+		student2.cMethod();
+
+	}
+
+}
+class st{
+	int rollNo;
+	String StudentName;
+
+	void cMethod() {
+		rollNo=4004;
+		StudentName="Shikhavat";
+		System.out.println(rollNo+" "+StudentName);
+		
+	}
+	
+}
+//Parametrized constructor
+package proj1;
+
+public class constructorTest2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//Parameterized constructor
+		st1 student3=new st1(122,"Raj");
+		st1 student4=new st1(118,"rose");
+		student3.cMethod1();
+		student4.cMethod1();
+		
+
+	}
+
+}
+class st1{
+	int rollNo1;
+	String StudentName1;
+	
+	public st1(int r,String sn) {
+		rollNo1=r;
+		StudentName1=sn;
+	}
+	void cMethod1() {
+		System.out.println(rollNo1+" "+StudentName1);
+	}
+}

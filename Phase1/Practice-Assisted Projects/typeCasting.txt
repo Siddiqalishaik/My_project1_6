@@ -1,0 +1,38 @@
+//Typecasting
+
+package proj1;
+
+public class typeCasting {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//implicit typeCasting
+		System.out.println("Implicit TypeCasting");
+		int i=100;
+		double d=i;
+		System.out.println("="+d);
+		
+		char a='B';
+		int j=a;
+		System.out.println("="+j);
+		
+		float f=a;
+		System.out.println(""+f);
+		
+		//Explicit typeCasting
+		System.out.println("Explicit typeCasting");
+		
+		double y=12d;
+		int no=(int)y;
+		System.out.println("="+no);
+		
+		int number=77;
+		char character=(char)number;
+		System.out.println(character);
+		
+		
+		
+
+	}
+
+}

@@ -1,0 +1,70 @@
+// Methods
+
+ 
+package proj1;
+
+public class methodTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Employee id1=new Employee();
+		int result=id1.idDisplay(234123);
+		System.out.println("Employee ID:"+result);
+
+	}
+
+}
+class Employee{
+	public int idDisplay(int idNo) {
+		int z=idNo;
+		return z;
+		
+		
+	}
+}
+//call value
+package proj1;
+
+public class callValue {
+	double number=50;
+	
+	 double calculation(double number) {
+		 number=number*100+55;
+		 return number;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		callValue v=new callValue();
+		System.out.println("The value of number is:\n"+ v.number);
+		v.calculation(15);
+		System.out.println("The value after calculation:\n"+v.number);
+
+	}
+
+}
+
+//overloading
+
+package proj1;
+
+public class overLoading {
+	public void cal(int x,int a,int b) {
+		int answer=x+a+b;
+		System.out.println("Answer:\n"+answer);
+	}
+	
+	public void cal(int z,int y) {
+			int ans=z-y;
+			System.out.println("Ans:\n"+ans);
+	}
+
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		overLoading c=new overLoading();
+		c.cal(2,10,20);
+		c.cal(43,9);
+	}
+
+}

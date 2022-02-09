@@ -1,0 +1,53 @@
+//MAP
+
+package proj1;
+import java.util.*;
+
+public class mapTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//HashMap
+		System.out.println("HashMap");
+		HashMap<String,Integer> cityCode=new HashMap<String,Integer>();
+		cityCode.put("Chennai",603);
+		cityCode.put("Hyderbad",607);
+		cityCode.put("Pune", 601);
+		System.out.println(cityCode);
+		System.out.println("\n");
+
+		for(Map.Entry m:cityCode.entrySet()) {
+			System.out.println(m.getKey()+"= "+m.getValue());
+			
+		}
+		//hashTable
+		System.out.println("\n");
+		System.out.println("Hashtable");
+		Hashtable<Integer,String>st=new Hashtable<Integer,String>();
+		st.put(1001, "std1");
+		st.put(1002, "std2");
+		st.put(1003,"std3");
+		st.put(1004,"std4");
+		System.out.println(st);
+		System.out.println("\n");
+		for(Map.Entry a:st.entrySet()) {
+			System.out.println(a.getKey()+" "+a.getValue());
+		}
+		//TreeMap
+		System.out.println("\n");
+		System.out.println("TreeMap");
+		TreeMap<Integer,String>st2=new TreeMap<Integer,String>();
+		st2.put(2003,"st5");
+		st2.put(2001,"st6");
+		st2.put(2002,"st7");
+		st2.put(2004,"st8");
+		System.out.println(st2);
+		System.out.println("\n");
+		for(Map.Entry d:st2.entrySet()){
+			System.out.println(d.getKey()+" "+d.getValue());
+			
+		}
+		
+		
+	}
+}
