@@ -1,0 +1,47 @@
+package proj1;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+import java.util.Scanner;
+import java.util.List;
+import java.util.ArrayList;
+
+
+public class ValidationOfEmail {
+	public static boolean isValidEmail(String email) {
+		String regex = "^(.+)@(.+)$";
+		
+		 //initialize the pattern object
+		Pattern pattern = Pattern.compile(regex);
+		Matcher matcher = pattern.matcher(email);
+		return matcher.matches();
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		List<String> emails = new ArrayList<String>();
+		// valid email addresses
+		emails.add("irctc@gmail.com");
+		emails.add("google@example.com");
+		emails.add("w3schools@example.co.in");
+		
+		
+		//invalid email addresses
+		emails.add("CRIckbuzz.example.com");
+		emails.add("@raj.......example.com");
+		emails.add("antivirusexample.com");
+		
+		for (String value : emails) {
+		System.out.println("The Email address " + value + " is " + (isValidEmail(value) ? "valid" : "invalid"));
+		}
+		System.out.println("Enter any email address to check:");
+		
+		Scanner sc = new Scanner(System.in);
+		
+		String input = sc.nextLine();
+		System.out.println("The Email address " + input + " is " + (isValidEmail(input) ? "valid" : "invalid"));
+				       
+
+
+	}
+
+}
