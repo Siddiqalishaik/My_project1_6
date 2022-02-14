@@ -1,0 +1,159 @@
+package proj1;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.Scanner;
+import java.io.File;
+
+public class VirtualKey {
+	 static String Directory;
+	    File  NewFolder;
+
+	    public VirtualKey() 
+	    {
+	    	Directory= System.getProperty("user.dir");
+	    	 NewFolder = new File("D:\\Project Files");
+	        if (! NewFolder.exists())
+	        	 NewFolder.mkdirs();
+	        System.out.println("\nFilePath : "+  NewFolder.getAbsolutePath());
+	    }
+	   private static final String WELCOME_TO_THIS_PORTAL =
+	   "\n Welcome to LockedMe.com Project " + "  " +    "\n By Siddiq Ali " + " " + "\n From: Company Lockers Pvt. Ltd";
+	   private static final String Business_Level_Operations =
+	            "\nMAIN MENU - \nSelect any one of the following operations: \n"+
+	   
+	                    "1 - To List the types of files in directory\n"+
+	                    "2 - To Perform functions like Delete,Add,Search\n"+
+	                    "3 - Exit";
+
+	    private static final String Operations =
+	            "   \nSelect any one of the following  operations: \n"+
+	    
+	                    "   1 - Add file\n"+
+	                    "   2 - Delete file\n"+
+	                    "   3 - To Search file\n"+
+	                    "   4 - Go Back to business level operations";
+
+	    void Oper1() {
+	        System.out.println(Business_Level_Operations);
+	        try(Scanner scanner = new Scanner(System.in)){
+	            
+	        	int option = scanner.nextInt();
+	            switch (option){
+	                case 1 : {
+	                	DisplayListOfFiles();
+	                	Oper1();
+	                }
+	                case 2 : {
+	                	Oper2();
+	                }
+	                case 3 : {
+	                    System.out.println("Thank You For Your Response");
+	                    System.exit(0);
+	                }
+	                default: Oper1();
+	            }
+	        }
+	        catch (Exception e){
+	            System.out.println("select 1, 2 or 3");
+	            Oper1();
+	        }
+	    }
+
+	    void Oper2() {
+	        System.out.println(Operations);
+	        try(Scanner scanner = new Scanner(System.in))
+	        {
+	            char[] input = scanner.nextLine().toLowerCase().trim().toCharArray();
+	            char logic = input[0];
+
+	            switch (logic){
+	                case '1' : {
+	                    System.out.print("Please Enter a File Name you want to Add : ");
+	                    String filename = scanner.next().trim().toLowerCase();
+	                    addFile(filename);
+	                    break;
+	                }
+	                case '2' : {
+	                    System.out.print("Please Enter a File Name you want to Delete : ");
+	                    String filename = scanner.next().trim();
+	                    deleteFile(filename);
+	                    break;
+	                }
+	                case '3' : {
+	                    System.out.print("Please Enter a File Name you want to Search For : ");
+	                    String filename = scanner.next().trim();
+	                    searchFile(filename);
+	                    break;
+	                }
+	                case '4' : {
+	                    System.out.println("Going back to the business level operations");
+	                    Oper1();
+	                    break;
+	                }
+	                default : System.out.println("Please enter valid input to search the data in list");
+	            }
+	            Oper2();
+	        }
+	        catch (Exception e){
+	            System.out.println("Please enter valid value to search the data in list");
+	            Oper2();
+	        }
+	    }
+	    void DisplayListOfFiles() {
+	        if ( NewFolder.list().length==0)
+	            System.out.println("Folder Empty");
+	        else {
+	            String[] list =  NewFolder.list();
+	            System.out.println("The files in "+  NewFolder +" are :");
+	            Arrays.sort(list);
+	            for (String str:list) {
+	                System.out.println(str);
+	            }
+	        }
+	    }
+	    void addFile(String filename) throws IOException {
+	        File filepath = new File( NewFolder +"/"+filename);
+	        String[] list =  NewFolder.list();
+	        for (String file: list) {
+	            if (filename.equalsIgnoreCase(file)) {
+	                System.out.println("File " + filename + " already exists at " +  NewFolder);
+	                return;
+	            }
+	        }
+	        filepath.createNewFile();
+	        System.out.println("File "+filename+" added to "+  NewFolder);
+	    }
+	    void deleteFile(String filename) {
+	        File filepath = new File( NewFolder +"/"+filename);
+	        String[] list =  NewFolder.list();
+	        for (String file: list) {
+	            if (filename.equals(file) && filepath.delete()) {
+	                System.out.println("File " + filename + " deleted from " +  NewFolder);
+	                return;
+	            }
+	        }
+	        System.out.println("Delete Operation failed. FILE NOT FOUND");
+	    }
+	    void searchFile(String filename) {
+	        String[] list =  NewFolder.list();
+	        for (String file: list) {
+	            if (filename.equals(file)) {
+	                System.out.println("FOUND : File " + filename + " exists at " + NewFolder);
+	                return;
+	            }
+	        }
+	        System.out.println("File Not found (FNF)");
+	    }
+
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+        System.out.println(WELCOME_TO_THIS_PORTAL); 
+        VirtualKey menu = new  VirtualKey();
+        menu.Oper1();
+
+
+	}
+
+}
