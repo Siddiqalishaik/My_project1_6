@@ -1,0 +1,47 @@
+//Creating a new project
+// Creating Angular components
+//Add the following code in app.module.ts
+//	Create a product-list.component.html file in the products folder.
+//	Add the following code to product-list.component.html.
+<h1> Product List Page </h1>
+//Create a file called  product-list.component.ts.
+
+import{BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import (AppComponent }from './app.component';
+import {Product List Component} from './products/product-list.component';
+
+@NgModule({
+	declarations: [
+	 AppComponent,
+	 ProductListComponent
+],
+imports: [
+	BrowserModule
+],
+providers: [],
+bootstrap: [AppComponent]
+
+}}
+
+export class AppModule {}
+//Add the following code in app.component.ts
+import { Component} from @angular/core';
+
+@Component({
+
+	selector: 'app-root',
+ 	template:`
+
+<product-list></product-list>
+`,
+styleUrls:['./app.component.css']
+
+[./app.component.css']
+
+})
+
+export class AppComponent {
+
+	title= 'angular-app';
+}
